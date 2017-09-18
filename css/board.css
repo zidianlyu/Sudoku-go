@@ -1,0 +1,204 @@
+#board {
+    width: 500px;
+    height: 500px;
+    margin: 15px auto 0;
+    position: relative;
+}
+
+#board-background {
+    height: 500px;
+    width: 500px;
+    background: #ddd;
+    box-shadow: 0 1px 2px #eee;
+}
+
+.game-container {
+    width: 800px !important;
+}
+
+
+/*header brick*/
+
+#game-header {
+    position: relative;
+    width: 300px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+#game-header div.header-brick {
+    position: absolute;
+    font-weight: 200;
+    font-size: 30px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Architects Daughter', cursive;
+    border-radius: 6px;
+    background: #bd6c26;
+    border: 1px inset #fff;
+    box-shadow: 0 0 4px rgba(151, 151, 255, 0.4);
+}
+
+.brick-1 {
+    top: 18%;
+    left: 5%;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+.brick-2 {
+    top: 7%;
+    left: 20%;
+    transform: rotate(4deg);
+    z-index: 2;
+}
+
+.brick-3 {
+    top: 19%;
+    left: 35%;
+    transform: rotate(-2deg);
+    z-index: 3;
+}
+
+.brick-4 {
+    top: 21%;
+    left: 50%;
+    z-index: 4;
+    transform: rotate(10deg);
+}
+
+.brick-5 {
+    transform: rotate(0deg);
+    top: 35%;
+    left: 66%;
+    z-index: 5;
+}
+
+.brick-6 {
+    transform: rotate(-6deg);
+    top: 16%;
+    left: 81%;
+    z-index: 6;
+}
+
+
+/*thick row*/
+
+#board span.row-thick {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 500px;
+    border: 1px solid rgba(255, 151, 151, 0.5);
+    box-shadow: 0 0 15px rgba(255, 151, 151, 1);
+}
+
+.first-row {
+    top: 33.33%;
+}
+
+.second-row {
+    top: 66.66%;
+}
+
+
+/*thin row*/
+
+#board span.row-thin {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 500px;
+    background: #fff;
+}
+
+.thin-row-1 {
+    top: 11.11%
+}
+
+.thin-row-2 {
+    top: 22.22%
+}
+
+.thin-row-3 {
+    top: 44.44%
+}
+
+.thin-row-4 {
+    top: 55.55%
+}
+
+.thin-row-5 {
+    top: 77.77%
+}
+
+.thin-row-6 {
+    top: 88.88%
+}
+
+
+/*thick col*/
+
+#board span.col-thick {
+    position: absolute;
+    display: block;
+    height: 500px;
+    width: 1px;
+    border: 1px solid rgba(255, 151, 151, 0.5);
+    box-shadow: 0 0 15px rgba(255, 151, 151, 1);
+}
+
+.first-col {
+    left: 33.4%;
+}
+
+.second-col {
+    left: 66.66%;
+}
+
+
+/*thin col*/
+
+#board span.col-thin {
+    position: absolute;
+    display: block;
+    height: 500px;
+    width: 1px;
+    background: #fff;
+}
+
+.thin-col-1 {
+    left: 11.11%
+}
+
+.thin-col-2 {
+    left: 22.22%
+}
+
+.thin-col-3 {
+    left: 44.44%
+}
+
+.thin-col-4 {
+    left: 55.55%
+}
+
+.thin-col-5 {
+    left: 77.77%
+}
+
+.thin-col-6 {
+    left: 88.88%
+}
+
+#score-detail {
+    font-size: 16px;
+    /*font-weight: 800;*/
+    /*color: darkgoldenrod;*/
+}

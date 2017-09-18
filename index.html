@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sudoku</title>
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container game-container">
+            <div id="game-header">
+                <div class="header-brick brick-1">S</div>
+                <div class="header-brick brick-2">U</div>
+                <div class="header-brick brick-3">D</div>
+                <div class="header-brick brick-4">O</div>
+                <div class="header-brick brick-5">K</div>
+                <div class="header-brick brick-6">U</div>
+            </div>
+
+            <div id="music-container">
+                <div class="music-container-menu">
+                    <div id="music-logo">
+                        <span class="fa fa-cog fa-2x fa-fw"></span>
+                    </div>
+                </div>
+
+                <div class="music-container-menu">
+                    <button id="play" class="btn btn-primary music-container-btn"><span class="fa fa-play"></span></button>
+                </div>
+
+                <div class="music-container-menu">
+                    <button id="pause" class="btn btn-danger music-container-btn"><span class="fa fa-pause"></span></button>
+                </div>
+
+                <div class="music-container-menu">
+                    <button id="volume-up" class="btn btn-success music-container-btn"><span class="fa fa-plus"></span></button>
+                </div>
+
+                <div class="music-container-menu">
+                    <button id="volume-down" class="btn btn-warning music-container-btn"><span class="fa fa-minus"></span></button>
+                </div>
+
+                <div class="music-container-menu">
+                    <button id="restart" class="btn btn-info music-container-btn"><span class="fa fa-random"></span></button>
+                </div>
+            </div>
+            <div id="switch-container">
+                <div id="game-before">
+                    <button id="start-button" class="btn btn-primary">Game</button>
+                </div>
+                <div id="game-after">
+                    <div id="score-board" class="alert alert-info">
+                        <p>
+                            <strong>(<span id="game-level"></span>-Level)&nbsp;Score:&nbsp;</strong>
+                            <span id="score-detail"></span>
+                        </p>
+                    </div>
+                    <button id="replay-button" class="btn btn-primary">Replay</button>
+                    <div id="message-instruction" class="message alert alert-warning">
+                        <p><strong>Instruction:&nbsp;</strong>Select an empty tile</p>
+                    </div>
+
+                    <div id="message-choose" class="message alert alert-warning">
+                        <p><strong>Instruction:&nbsp;</strong>Choose an option tile</p>
+                    </div>
+
+                    <div id="message-wrong" class="message alert alert-danger">
+                        <p><strong>Oh snap!&nbsp;</strong>Wong tile, try again!</p>
+                    </div>
+
+                    <div id="message-correct" class="message alert alert-success">
+                        <p><strong>Good job!&nbsp;</strong>You make it!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="level-option-modal" class="modal fade" tabindex="-1" role='dialog'>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Select Level</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <button id="level-test" class="btn btn-primary">Test</button>
+                            <button id="level-easy" class="btn btn-success">Easy</button>
+                            <button id="level-medium" class="btn btn-warning">Medium</button>
+                            <button id="level-hard" class="btn btn-danger">Hard</button>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a href="#" data-dismiss="modal" class="btn">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="board">
+                <span class="row-thick first-row"></span>
+                <span class="row-thick second-row"></span>
+
+                <span class="row-thin thin-row-1"></span>
+                <span class="row-thin thin-row-2"></span>
+                <span class="row-thin thin-row-3"></span>
+                <span class="row-thin thin-row-4"></span>
+                <span class="row-thin thin-row-5"></span>
+                <span class="row-thin thin-row-6"></span>
+
+                <span class="col-thick first-col"></span>
+                <span class="col-thick second-col"></span>
+
+                <span class="col-thin thin-col-1"></span>
+                <span class="col-thin thin-col-2"></span>
+                <span class="col-thin thin-col-3"></span>
+                <span class="col-thin thin-col-4"></span>
+                <span class="col-thin thin-col-5"></span>
+                <span class="col-thin thin-col-6"></span>
+                <div id="board-background"></div>
+            </div>
+
+            <div id="option-board"></div>
+
+            <div id="win-message" class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Congradulation!!</h4>
+                <p>Your
+                    <strong>&nbsp;score:&nbsp;</strong>
+                    <span id="score-final"></span>
+                </p>
+            </div>
+
+            <div class="footer">
+                    <div class="container">
+                        <p class="text-muted text-center">©2017 Zidian Lyu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/tether.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/animation.js"></script>
+        <script type="text/javascript" src="js/music.js"></script>
+        <script type="text/javascript" src="js/engine.js"></script>
+        <script type="text/javascript" src="js/sudoku.js"></script>
+        <script type="text/javascript" src="js/setup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+#game-after p {
+    margin: 0;
+    width: 270px;
+    text-align: left
+}
+
+#win-message {
+    margin: 20px auto 0;
+    width: 350px;
+}

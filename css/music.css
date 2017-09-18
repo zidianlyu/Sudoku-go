@@ -1,0 +1,62 @@
+/*Toolbar reset*/
+
+#music-container * {
+    margin: 3px 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+/*content*/
+
+#music-container {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    margin-top: -100px;
+    z-index: 100;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.music-container-menu {
+    position: relative;
+}
+
+.music-container-btn {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ddd !important;
+    text-align: center;
+    display: block;
+    margin-bottom: 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+#music-logo {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ddd !important;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    margin-bottom: 6px;
+}
+
+#music-logo span {
+    color: #CCA351;
+    font-size: 30px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.music-container-btn span {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}

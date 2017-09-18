@@ -1,0 +1,58 @@
+body {
+    font-family: 'Helvetica';
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.game-container {
+    background: #eee;
+    box-shadow: 0 1px 2px #ccc;
+    margin: 20px auto;
+    height: 800px;
+    min-width: 800px;
+    border-radius: 5px;
+}
+
+#game-header {
+    padding: 30px 0 10px;
+}
+
+#game-header, #switch-container, #win-message {
+    text-align: center;
+}
+
+#game-header h1 {
+    font-weight: 200 !important;
+}
+
+#switch-container button {
+    width: 100px;
+}
+
+#game-after, #game-before {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-after button {
+    margin: 0 10px;
+}
+
+#message-instruction, #message-wrong, #message-correct, #score-board, #message-choose {
+    margin: 0 !important;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+}
+
+.footer div.container {
+    position: absolute;
+    bottom: 0;
+}
