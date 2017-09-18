@@ -12,8 +12,8 @@ window.onload = function() {
     $('#board').hide();
     $("#option-board").hide();
     $('#game-after').hide();
-    $('#win-message').hide();
     $('.message').hide();
+    $('#win-message').hide();
     $('#pause').parent().hide();
 }
 

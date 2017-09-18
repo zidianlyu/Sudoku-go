@@ -66,6 +66,8 @@ function handleInit() {
         $('#score-detail').text('0');
         bgm.play();
         $('.fa-cog').addClass('fa-spin');
+        $('#play').parent().hide();
+        $('#pause').parent().show();
     }, 200);
 }
 

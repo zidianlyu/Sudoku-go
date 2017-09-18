@@ -16,6 +16,10 @@
     width: 800px !important;
 }
 
+.hide {
+    display: none !important;
+}
+
 
 /*header brick*/
 
