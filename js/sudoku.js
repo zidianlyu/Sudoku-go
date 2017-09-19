@@ -1,4 +1,4 @@
-let game, tilesToWin, playBoard, playBoardStr, solveBoard, solveBoardStr, bgm;
+let game, tilesToWin, playBoard, playBoardStr, solveBoard, solveBoardStr, bgm, lastgame;
 $('#level-test').click(function() {
     tilesToWin = 2;
     $('#game-level').text('Test');
@@ -10,6 +10,7 @@ $('#level-test').click(function() {
     clearBoard();
     game = new Game(tileBoard);
     game.init();
+    clearTimeout(lastgame);
     handleInit();
 });
 
@@ -24,6 +25,7 @@ $('#level-easy').click(function() {
     clearBoard();
     game = new Game(tileBoard);
     game.init();
+    clearTimeout(lastgame);
     handleInit();
 });
 
@@ -38,6 +40,7 @@ $('#level-medium').click(function() {
     clearBoard();
     game = game || new Game(tileBoard);
     game.init();
+    clearTimeout(lastgame);
     handleInit();
 });
 
@@ -52,14 +55,18 @@ $('#level-hard').click(function() {
     clearBoard();
     game = game || new Game(tileBoard);
     game.init();
+    clearTimeout(lastgame);
     handleInit();
 });
 
 function handleInit() {
-    setTimeout(function() {
+    lastgame = setTimeout(function() {
+        $('#game-before').hide();
+        $('#game-after').hide();
+        $('.message').hide();
+        $('#option-board').hide();
         $('#board').show();
         $('#level-option-modal').modal('hide');
-        $('#game-before').hide();
         $('#game-after').show();
         $('#score-board').show();
         $('#message-instruction').show();

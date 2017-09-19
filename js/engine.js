@@ -10,11 +10,7 @@ window.onload = function() {
     tileBoard = document.getElementById('board');
     $('#level-option-modal').hide();
     $('#board').hide();
-    $("#option-board").hide();
-    $('#game-after').hide();
-    $('.message').hide();
-    $('#win-message').hide();
-    $('#pause').parent().hide();
+
 }
 
 $('#start-button').click(function() {
@@ -129,7 +125,7 @@ $('#option-board').click(function(e) {
             handleWrongMsg = setTimeout(function() {
                 $('#message-wrong').hide();
                 $('#message-choose').show();
-            }, 500)
+            }, 800)
         }
     }
 });
