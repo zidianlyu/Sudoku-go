@@ -1,7 +1,7 @@
 #option-board {
     height: 50px;
     width: 500px;
-    margin: 25px auto 0;
+    margin: 12px auto 0;
     position: relative;
 }
 
@@ -11,8 +11,8 @@
     margin: 0;
     padding: 0;
     font-size: 25px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;

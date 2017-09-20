@@ -1,9 +1,15 @@
 /*Toolbar reset*/
 
 #music-container * {
-    margin: 3px 0 0;
     padding: 0;
     list-style-type: none;
+}
+
+.music-container-menu button span.fa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 
@@ -24,12 +30,12 @@
 }
 
 .music-container-btn {
-    width: 48px;
-    height: 48px;
+    width: 100%;
+    height: 50px;
     border: 1px solid #ddd !important;
     text-align: center;
     display: block;
-    margin-bottom: 6px;
+    margin-top: 6px;
     position: relative;
     cursor: pointer;
 }

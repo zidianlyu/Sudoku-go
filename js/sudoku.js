@@ -1,87 +1,3 @@
-let game, tilesToWin, playBoard, playBoardStr, solveBoard, solveBoardStr, bgm, lastgame;
-$('#level-test').click(function() {
-    tilesToWin = 2;
-    $('#game-level').text('Test');
-    $('#score-detail').text('');
-    solveBoard = generateSolveBoard(generatePlainBoard());
-    solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
-    playBoard = generatePlayBoard(solveBoard, tilesToWin);
-    playBoardStr = playBoard.map(arr => arr.join('')).join('');
-    clearBoard();
-    game = new Game(tileBoard);
-    game.init();
-    clearTimeout(lastgame);
-    handleInit();
-});
-
-$('#level-easy').click(function() {
-    tilesToWin = 43;
-    $('#game-level').text('Easy');
-    $('#score-detail').text('');
-    solveBoard = generateSolveBoard(generatePlainBoard());
-    solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
-    playBoard = generatePlayBoard(solveBoard, tilesToWin);
-    playBoardStr = playBoard.map(arr => arr.join('')).join('');
-    clearBoard();
-    game = new Game(tileBoard);
-    game.init();
-    clearTimeout(lastgame);
-    handleInit();
-});
-
-$('#level-medium').click(function() {
-    tilesToWin = 57;
-    $('#game-level').text('Medium');
-    $('#score-detail').text('');
-    solveBoard = generateSolveBoard(generatePlainBoard());
-    solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
-    playBoard = generatePlayBoard(solveBoard, tilesToWin);
-    playBoardStr = playBoard.map(arr => arr.join('')).join('');
-    clearBoard();
-    game = game || new Game(tileBoard);
-    game.init();
-    clearTimeout(lastgame);
-    handleInit();
-});
-
-$('#level-hard').click(function() {
-    tilesToWin = 65;
-    $('#game-level').text('Hard');
-    $('#score-detail').text('');
-    solveBoard = generateSolveBoard(generatePlainBoard());
-    solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
-    playBoard = generatePlayBoard(solveBoard, tilesToWin);
-    playBoardStr = playBoard.map(arr => arr.join('')).join('');
-    clearBoard();
-    game = game || new Game(tileBoard);
-    game.init();
-    clearTimeout(lastgame);
-    handleInit();
-});
-
-function handleInit() {
-    lastgame = setTimeout(function() {
-        $('#game-before').hide();
-        $('#game-after').hide();
-        $('.message').hide();
-        $('#option-board').hide();
-        $('#board').show();
-        $('#level-option-modal').modal('hide');
-        $('#game-after').show();
-        $('#score-board').show();
-        $('#message-instruction').show();
-        $('#score-detail').text('0');
-        bgm.play();
-        $('.fa-cog').addClass('fa-spin');
-        $('#play').parent().hide();
-        $('#pause').parent().show();
-    }, 200);
-}
-
-function clearBoard() {
-    $('.tile').remove();
-}
-
 function generatePlainBoard() {
     let board = [];
     for (let row = 0; row < 9; row++) {
@@ -93,7 +9,7 @@ function generatePlainBoard() {
     return board;
 }
 
-let board = generatePlainBoard();
+// let board = generatePlainBoard();
 
 function generateSolveBoard(board) {
     for (let i = 0; i < board.length; i++) {
@@ -145,8 +61,8 @@ function shuffler() {
     return arr;
 }
 
-solveBoard = generateSolveBoard(board);
-solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
+// solveBoard = generateSolveBoard(board);
+// solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
 
 function generatePlayBoard(solveBoard, emptyCount) {
     let playBoard = solveBoard.map(arr => arr.slice());

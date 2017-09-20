@@ -4,13 +4,20 @@ let selectPos,
     numSet,
     handleWrongMsg,
     animateTopPos,
-    animateLeftPos;
+    animateLeftPos,
+    game,
+    tilesToWin,
+    playBoard,
+    playBoardStr,
+    solveBoard,
+    solveBoardStr,
+    bgm,
+    lastgame;
 
 window.onload = function() {
     tileBoard = document.getElementById('board');
     $('#level-option-modal').hide();
     $('#board').hide();
-
 }
 
 $('#start-button').click(function() {
@@ -80,7 +87,7 @@ $('#option-board').click(function(e) {
             $('#plus-tile').css('top', `${animateTopPos}`);
             $('#plus-tile').css('left', `${animateLeftPos}`);
             setTimeout(function() {
-                 $('#plus-tile').remove();
+                $('#plus-tile').remove();
             }, 1000);
 
             // update state and clean up
@@ -188,4 +195,59 @@ function buildOptionTile(set) {
     for (let n of arr) {
         $('#option-board').append(`<div class="option-tile option-tile-${n} tile${n}" value="${n}">${n}</div>`);
     }
+}
+
+$('#level-test').click(function() {
+    tilesToWin = 2;
+    $('#game-level').text('Test');
+    clearTimeout(lastgame);
+    handleInit();
+});
+
+$('#level-easy').click(function() {
+    tilesToWin = 43;
+    $('#game-level').text('Easy');
+    clearTimeout(lastgame);
+    handleInit();
+});
+
+$('#level-medium').click(function() {
+    tilesToWin = 57;
+    $('#game-level').text('Medium');
+    clearTimeout(lastgame);
+    handleInit();
+});
+
+$('#level-hard').click(function() {
+    tilesToWin = 65;
+    $('#game-level').text('Hard');
+    clearTimeout(lastgame);
+    handleInit();
+});
+
+function handleInit() {
+    lastgame = setTimeout(function() {
+        $('#score-detail').text('');
+        solveBoard = generateSolveBoard(generatePlainBoard());
+        solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
+        playBoard = generatePlayBoard(solveBoard, tilesToWin);
+        playBoardStr = playBoard.map(arr => arr.join('')).join('');
+        $('.tile').remove();
+        game = game || new Game(tileBoard);
+        game.init();
+        $('#game-before').hide();
+        $('#game-after').hide();
+        $('.message').hide();
+        $('#option-board').hide();
+        $('#board').show();
+        $('#level-option-modal').modal('hide');
+        $('#game-after').show();
+        $('#score-board').show();
+        $('#message-instruction').show();
+        $('#score-detail').text('0');
+        bgm.play();
+        $('.fa-cog').addClass('fa-spin');
+        $('#play').parent().hide();
+        $('#pause').parent().show();
+    }, 200);
 }

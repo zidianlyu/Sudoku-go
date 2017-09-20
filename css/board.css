@@ -1,7 +1,7 @@
 #board {
     width: 500px;
     height: 500px;
-    margin: 15px auto 0;
+    margin: 5px auto 0;
     position: relative;
 }
 
@@ -10,10 +10,6 @@
     width: 500px;
     background: #ddd;
     box-shadow: 0 1px 2px #eee;
-}
-
-.game-container {
-    width: 800px !important;
 }
 
 .hide {
@@ -50,44 +46,44 @@
 }
 
 .brick-1 {
-    top: 18%;
+    top: 27%;
     left: 5%;
     transform: rotate(-10deg);
     z-index: 1;
 }
 
 .brick-2 {
-    top: 7%;
+    top: 16%;
     left: 20%;
     transform: rotate(4deg);
     z-index: 2;
 }
 
 .brick-3 {
-    top: 19%;
+    top: 28%;
     left: 35%;
     transform: rotate(-2deg);
     z-index: 3;
 }
 
 .brick-4 {
-    top: 21%;
+    top: 30%;
     left: 50%;
-    z-index: 4;
     transform: rotate(10deg);
+    z-index: 4;
 }
 
 .brick-5 {
-    transform: rotate(0deg);
     top: 35%;
     left: 66%;
+    transform: rotate(0deg);
     z-index: 5;
 }
 
 .brick-6 {
-    transform: rotate(-6deg);
-    top: 16%;
+    top: 25%;
     left: 81%;
+    transform: rotate(-6deg);
     z-index: 6;
 }
 

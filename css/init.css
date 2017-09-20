@@ -9,10 +9,28 @@ button:hover {
 .game-container {
     background: #eee;
     box-shadow: 0 1px 2px #ccc;
-    margin: 20px auto;
-    height: 800px;
-    min-width: 800px;
+    margin: 10px auto;
+    height: 740px;
+    width: 650px !important;
     border-radius: 5px;
+}
+
+@media (min-height: 750px) {
+    .game-container {
+        margin: 20px auto;
+    }
+}
+
+@media (min-height: 800px) {
+    .game-container {
+        margin: 30px auto 20px;
+    }
+}
+
+@media (min-height: 850px) {
+    .game-container {
+        margin: 40px auto 20px;
+    }
 }
 
 #game-header {
@@ -28,18 +46,49 @@ button:hover {
 }
 
 #switch-container button {
-    width: 100px;
+    /*width: 100px;*/
 }
 
 #game-after, #game-before {
-    height: 60px;
+    width: 500px;
+    margin: 0 auto;
     display: flex;
+}
+
+#game-after {
+    justify-content: space-between;
+}
+
+#game-before {
     justify-content: center;
+}
+
+#score-board, #game-after div.message {
+    width: 48%;
+    display: flex;
     align-items: center;
 }
 
-#game-after button {
-    margin: 0 10px;
+#score-board {
+    justify-content: flex-start;
+}
+
+#replay-button {
+    font-size: 13px;
+}
+
+#game-after div.message {
+    justify-content: center;
+}
+
+.alert {
+    padding: 5px !important;
+}
+
+#score-board p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #message-instruction, #message-wrong, #message-correct, #score-board, #message-choose {
@@ -47,12 +96,17 @@ button:hover {
 }
 
 .footer {
+    position: absolute;
     display: flex;
     justify-content: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto 10px;
     font-weight: 100;
+    z-index: 1;
 }
 
-.footer div.container {
-    position: absolute;
-    bottom: 0;
+.footer span {
+    color: #999;
 }

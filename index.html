@@ -6,15 +6,16 @@
         <link rel="stylesheet" href="css/game.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome-animation-min.css">
     </head>
     <body>
         <div class="container game-container">
             <div id="game-header">
                 <div class="header-brick brick-1">S</div>
-                <div class="header-brick brick-2">U</div>
+                <div class="header-brick brick-2 faa-ring faa-slow animated">U</div>
                 <div class="header-brick brick-3">D</div>
                 <div class="header-brick brick-4">O</div>
-                <div class="header-brick brick-5">K</div>
+                <div class="header-brick brick-5 faa-wrench animated">K</div>
                 <div class="header-brick brick-6">U</div>
             </div>
 
@@ -52,25 +53,25 @@
                 <div id="game-after" style="display: none">
                     <div id="score-board" class="alert alert-info">
                         <p>
-                            <strong>(<span id="game-level"></span>-Level)&nbsp;Score:&nbsp;</strong>
+                            <button id="replay-button" class="btn btn-primary">Replay</button>
+                            <strong>&nbsp;Score:&nbsp;</strong>
                             <span id="score-detail"></span>
                         </p>
                     </div>
-                    <button id="replay-button" class="btn btn-primary">Replay</button>
                     <div id="message-instruction" class="message alert alert-warning" style="display: none">
-                        <p><strong>Instruction:&nbsp;</strong>Select an empty tile</p>
+                        <p>Select an <strong>empty</strong> tile!</p>
                     </div>
 
                     <div id="message-choose" class="message alert alert-warning" style="display: none">
-                        <p><strong>Instruction:&nbsp;</strong>Choose an option tile</p>
+                        <p>Choose an <strong>option</strong> tile!</p>
                     </div>
 
                     <div id="message-wrong" class="message alert alert-danger" style="display: none">
-                        <p><strong>Oh snap!&nbsp;</strong>Wong tile, try again!</p>
+                        <p><strong>Wrong</strong> tile, try again!</p>
                     </div>
 
                     <div id="message-correct" class="message alert alert-success" style="display: none">
-                        <p><strong>Good job!&nbsp;</strong>You make it!</p>
+                        <p><strong>Great</strong>!You make it!</p>
                     </div>
                 </div>
             </div>
@@ -131,10 +132,7 @@
             </div>
 
             <div class="footer">
-                    <div class="container">
-                        <p class="text-muted text-center">©2017 Zidian Lyu</p>
-                    </div>
-                </div>
+                    <span>©2017 Zidian Lyu</span>
             </div>
         </div>
 
@@ -144,8 +142,8 @@
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="js/animation.js"></script>
         <script type="text/javascript" src="js/music.js"></script>
-        <script type="text/javascript" src="js/engine.js"></script>
         <script type="text/javascript" src="js/sudoku.js"></script>
         <script type="text/javascript" src="js/setup.js"></script>
+        <script type="text/javascript" src="js/engine.js"></script>
     </body>
 </html>
