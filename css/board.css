@@ -26,6 +26,24 @@
     margin: 0 auto;
 }
 
+#game-header span.header-object {
+    z-index: 7;
+    position: absolute;
+}
+
+.object-1 {
+    top: 10px;
+    left: 0;
+    color: rgba(0, 151, 255, 0.8);
+}
+
+.object-2 {
+    top: 2px;
+    right: -8px;
+    font-size: 25px !important;
+    color: rgba(255, 151, 0, 0.8);
+}
+
 #game-header div.header-brick {
     position: absolute;
     font-weight: 200;
@@ -199,6 +217,4 @@
 
 #score-detail {
     font-size: 16px;
-    /*font-weight: 800;*/
-    /*color: darkgoldenrod;*/
 }

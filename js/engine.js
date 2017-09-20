@@ -18,6 +18,11 @@ window.onload = function() {
     tileBoard = document.getElementById('board');
     $('#level-option-modal').hide();
     $('#board').hide();
+    setTimeout(function(){
+        $('.faa-ring').removeClass('faa-ring');
+        $('.faa-slow').removeClass('faa-slow');
+        $('.faa-wrench').removeClass('faa-wrench');
+    }, 1800);
 }
 
 $('#start-button').click(function() {
@@ -100,11 +105,15 @@ $('#option-board').click(function(e) {
 
             // Win the game
             if (tilesToWin === 0) {
-                $('#score-board').hide();
-                $('.message').hide();
                 $('#score-final').text($('#score-detail').text());
                 setTimeout(function() {
+                    $('#score-board').hide();
+                    $('.message').hide();
                     $('#board').hide();
+                    $('.object-1').removeClass('faa-float faa-slow');
+                    $('.object-2').removeClass('faa-wrench faa-slow');
+                    $('#start-button').text('Replay');
+                    $('#game-before').fadeIn(1000);
                     $('#win-message').fadeIn(1200);
                 }, 1500)
             } else {
@@ -228,6 +237,9 @@ $('#level-hard').click(function() {
 function handleInit() {
     lastgame = setTimeout(function() {
         $('#score-detail').text('');
+        $('#win-message').hide();
+        $('.object-1').addClass('faa-float faa-slow');
+        $('.object-2').addClass('faa-wrench faa-slow');
         solveBoard = generateSolveBoard(generatePlainBoard());
         solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
         playBoard = generatePlayBoard(solveBoard, tilesToWin);
