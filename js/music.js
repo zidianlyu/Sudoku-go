@@ -1,7 +1,8 @@
-let bgm_stack = ['a_look_of_love', 'tiga', 'the_six_station'];
+var bgmStack = ['a_look_of_love', 'butterfly', 'elegy_for_the_victims', 'last_waltz', 'merry_christmas_mr_lawrence', 'spirited_away', 'the_six_station', 'tiga'];
+var bgmPlayList = shuffleArr();
 $(document).ready(function() {
     bgm = document.createElement('audio');
-    bgm.setAttribute('src', `audio/${bgm_stack[~~(Math.random() * bgm_stack.length)]}.mp3`);
+    bgm.setAttribute('src', `audio/${bgmStack[bgmPlayList.pop()]}.mp3`);
     $('#play').click(function() {
         bgm.play();
         $('.fa-cog').addClass('fa-spin');
@@ -24,14 +25,28 @@ $(document).ready(function() {
         $('#pause').parent().hide();
         $('#play').parent().show();
     });
-    $('#restart').click(function() {
-        $('.fa-cog').removeClass('fa-spin');
-        bgm.setAttribute('src', `audio/${bgm_stack[~~(Math.random() * bgm_stack.length)]}.mp3`);
-        bgm.play();
-        $('.fa-cog').addClass('fa-spin');
+    $('#random-play').click(function() {
+        handleRandomPlay();
     });
     bgm.addEventListener('ended', function() {
-        bgm.currentTime = 0;
-        bgm.play();
+        handleRandomPlay();
     })
 });
+
+function handleRandomPlay() {
+    if (bgmPlayList.length === 0) {
+        bgmPlayList = shuffleArr();
+    }
+    bgm.setAttribute('src', `audio/${bgmStack[bgmPlayList.pop()]}.mp3`);
+    bgm.play();
+    $('.fa-cog').addClass('fa-spin');
+}
+
+function shuffleArr() {
+    let arr = [...Array(bgmStack.length).keys()];
+    for (let i = 0; i < arr.length; i++) {
+        let j = Math.floor(Math.random() * arr.length);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
