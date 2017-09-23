@@ -3,6 +3,7 @@ var bgmPlayList = shuffleArr();
 $(document).ready(function() {
     bgm = document.createElement('audio');
     bgm.setAttribute('src', `audio/${bgmStack[bgmPlayList.pop()]}.mp3`);
+    $('#volume-num').text(`${~~(bgm.volume * 100)}%`);
     $('#play').click(function() {
         bgm.play();
         $('.fa-cog').addClass('fa-spin');
@@ -13,11 +14,13 @@ $(document).ready(function() {
         if (bgm.volume < 1) {
             bgm.volume += 0.1;
         }
+        $('#volume-num').text(`${~~(bgm.volume * 100)}%`);
     });
     $('#volume-down').click(function() {
         if (bgm.volume > 0.1) {
             bgm.volume -= 0.1;
         }
+        $('#volume-num').text(`${~~(bgm.volume * 100)}%`);
     });
     $('#pause').click(function() {
         bgm.pause();
@@ -40,6 +43,9 @@ function handleRandomPlay() {
     bgm.setAttribute('src', `audio/${bgmStack[bgmPlayList.pop()]}.mp3`);
     bgm.play();
     $('.fa-cog').addClass('fa-spin');
+    $('#play').parent().hide();
+    $('#pause').parent().show();
+    $('#volume-num').text(`${~~(bgm.volume * 100)}%`);
 }
 
 function shuffleArr() {
