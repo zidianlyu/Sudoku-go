@@ -47,7 +47,7 @@ open index.html
 
 6. Implement a background music box, which allows user to volume up/down; shuffle change music after the set playlist(without repeat).
 
-    <img src="https://github.com/zidianlyu/Sudoku-go/blob/master/docs/music.png" align="center" width="600" overflow="hidden">
+    <img src="https://github.com/zidianlyu/Sudoku-go/blob/master/docs/music.png" align="center" hight="400" overflow="hidden">
 
 ## Project Management
 
