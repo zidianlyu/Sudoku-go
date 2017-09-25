@@ -9,8 +9,6 @@ function generatePlainBoard() {
     return board;
 }
 
-// let board = generatePlainBoard();
-
 function generateSolveBoard(board) {
     for (let i = 0; i < board.length; i++) {
         for (let j = 0; j < board[0].length; j++) {
@@ -61,9 +59,6 @@ function shuffler() {
     return arr;
 }
 
-// solveBoard = generateSolveBoard(board);
-// solveBoardStr = solveBoard.map(arr => arr.join('')).join('');
-
 function generatePlayBoard(solveBoard, emptyCount) {
     let playBoard = solveBoard.map(arr => arr.slice());
     while (emptyCount > 0) {
@@ -77,5 +72,3 @@ function generatePlayBoard(solveBoard, emptyCount) {
     }
     return playBoard;
 }
-
-// let playBoard = generatePlayBoard(solveBoard, levelSelection('easy'));
