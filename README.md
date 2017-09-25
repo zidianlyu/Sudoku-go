@@ -264,10 +264,7 @@ function handleInit() {
 
 [Bootstrap](http://getbootstrap.com/)
 
-[Chartjs](http://www.chartjs.org/)
-
 [Fontawesome](http://fontawesome.io/)
-
 
 [Sudoku-go]:
 https://zidianlyu.github.io/Sudoku-go/
